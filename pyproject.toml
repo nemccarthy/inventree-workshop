@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "inventree-workshop"
+description = "Workshop jobs for InvenTree: parts made in-house on a laser, CNC mill or other machine, with their files, as build orders"
+dynamic = ["version"]
+authors = [
+    { name = "EdgeMachines" },
+]
+readme = "README.md"
+license = "MIT"
+keywords = ["inventree", "plugin", "workshop", "cnc", "laser", "carvera", "xtool"]
+requires-python = ">=3.9"
+dependencies = []
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Framework :: InvenTree",
+]
+
+[project.urls]
+Homepage = "https://github.com/nemccarthy/inventree-workshop"
+Repository = "https://github.com/nemccarthy/inventree-workshop"
+Issues = "https://github.com/nemccarthy/inventree-workshop/issues"
+Changelog = "https://github.com/nemccarthy/inventree-workshop/blob/main/CHANGELOG.md"
+
+[project.entry-points."inventree_plugins"]
+WorkshopPlugin = "inventree_workshop.core:WorkshopPlugin"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["inventree_workshop*"]
+
+[tool.setuptools.dynamic]
+version = {attr = "inventree_workshop.PLUGIN_VERSION"}

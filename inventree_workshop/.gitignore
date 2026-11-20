@@ -1,0 +1,3 @@
+# The compiled frontend in ./static IS committed, so that the plugin can be
+# installed straight from the git repository. Rebuild it (npm run build in
+# ../frontend) and commit the result whenever the frontend changes.
